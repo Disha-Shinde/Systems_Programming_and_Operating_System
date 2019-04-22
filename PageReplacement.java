@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class page 
+public class PageReplacement
 {
 	Scanner sc = new Scanner(System.in);
 	String seq = "";
@@ -141,7 +141,7 @@ public class page
 	
 	public static void main(String[] args) 
 	{
-		page p = new page();
+		PageReplacement p = new PageReplacement();
 		
 		while(true)
 		{
