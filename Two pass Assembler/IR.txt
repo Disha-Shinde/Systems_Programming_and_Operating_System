@@ -1,0 +1,8 @@
+AD 1 
+S 0 DS 5 
+IS 1 REG 1 S 1 
+S 1 DC 1 
+IS 1 REG 2 L 0 
+AD 3 
+IS 1 REG 1 L 1 
+AD 2 
