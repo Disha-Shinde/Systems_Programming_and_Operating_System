@@ -49,6 +49,12 @@ public class PageReplacement
 		
 		System.out.println("Page fault : " + fault);
 		System.out.println("Page hit : " + hit);
+		
+		float f = (float)fault/(page.length) * 100;
+		float h = (float)hit/(page.length) * 100;
+		
+		System.out.println("Fault rate: " + f);
+		System.out.println("Hit rate: " + h);
 	}
 	
 	void lru()
@@ -85,6 +91,12 @@ public class PageReplacement
 		
 		System.out.println("Page fault : " + fault);
 		System.out.println("Page hit : " + hit);
+		
+		float f = (float)fault/(page.length) * 100;
+		float h = (float)hit/(page.length) * 100;
+		
+		System.out.println("Fault rate: " + f);
+		System.out.println("Hit rate: " + h);
 	}
 	
 	void optimal()
@@ -137,6 +149,12 @@ public class PageReplacement
 		
 		System.out.println("Page fault : " + fault);
 		System.out.println("Page hit : " + hit);
+		
+		float f = (float)fault/(page.length) * 100;
+		float h = (float)hit/(page.length) * 100;
+		
+		System.out.println("Fault rate: " + f);
+		System.out.println("Hit rate: " + h);
 	}
 	
 	public static void main(String[] args) 
