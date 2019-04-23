@@ -50,7 +50,7 @@ public class FCFS_arrival
 			}
 		}
 		
-		System.out.println("\nProcess | Arrival Time |  Finish Time  |   Burst time   | Waiting Time | Turnaround Time");
+		System.out.println("\nProcess | Arrival Time |   Burst time   |  Finish Time  | Waiting Time | Turnaround Time");
 		
 		//Calculate finish time
 		for(int i=0; i<n; i++)
@@ -67,7 +67,7 @@ public class FCFS_arrival
 			tat[i] = finish_time[i] - at[i];
 			wait[i] = tat[i] - bt[i];
 			
-			System.out.println("  P" + process[i] + "\t\t" + at[i] + "\t\t" + finish_time[i] + "\t\t" + bt[i] + "\t\t" + wait[i] + "\t\t" + tat[i]);
+			System.out.println("  P" + process[i] + "\t\t" + at[i] + "\t\t" + bt[i] + "\t\t" + finish_time[i] + "\t\t" + wait[i] + "\t\t" + tat[i]);
 		}
 		
 		for(int i=0; i<n; i++)
