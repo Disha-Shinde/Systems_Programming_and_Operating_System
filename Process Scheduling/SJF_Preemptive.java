@@ -30,6 +30,8 @@ public class SJF_Preemptive
 			rt[i] = bt[i];
 		}
 		
+		System.out.println("\nProcess | Arrival Time |  Finish Time  |   Burst time   | Waiting Time | Turnaround Time");
+		
 		rt[9] = 999;
 		int time;
 		for(time=0; count!=n; time++)
@@ -50,6 +52,8 @@ public class SJF_Preemptive
 				finish_time[small] = time+1;
 				tat[small] = finish_time[small] - at[small];
 				wait[small] = tat[small] - bt[small];
+				
+				System.out.println("  P" + process[small] + "\t\t" + at[small] + "\t\t" + finish_time[small] + "\t\t" + bt[small] + "\t\t" + wait[small] + "\t\t" + tat[small]);
 			}
 		}
 		
@@ -61,12 +65,6 @@ public class SJF_Preemptive
 		
 		avg_wait = (float)tot_wait / n;
 		avg_tat = (float)tot_tat / n;
-		
-		System.out.println("\nProcess | Arrival Time |  Finish Time  |   Burst time   | Waiting Time | Turnaround Time");
-		for(int i=0; i<n; i++)
-		{
-			System.out.println("  P" + process[i] + "\t\t" + at[i] + "\t\t" + finish_time[i] + "\t\t" + bt[i] + "\t\t" + wait[i] + "\t\t" + tat[i]);	
-		}
 		
 		System.out.println("\nAverage Waiting time : " + avg_wait);
 		System.out.println("Average Turnaround Time : " + avg_tat);		
