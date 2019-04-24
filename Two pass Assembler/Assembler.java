@@ -69,7 +69,9 @@ public class Assembler
 		FileWriter fw = new FileWriter("IR.txt");
 		File f = new File("input.txt");
 		BufferedReader br = new BufferedReader(new FileReader(f));
-		String line = new String();while((line = br.readLine()) != null)
+		String line = new String();
+		
+		while((line = br.readLine()) != null)
 		{
 			String token[] = line.split(" ");
 			int i=0;
@@ -82,9 +84,14 @@ public class Assembler
 				}
 				else
 				{
-					if(token.length == 4)
+					if(token.length == 4 && i == 0)
 					{
-						search(token[i]);
+						ST[Sptr] = new Symbol();
+						ST[Sptr].sname = token[i];
+						ST[Sptr].addr = LC;
+						System.out.print("S " + Sptr + " ");
+						fw.write("S " + Sptr + " ");
+						Sptr++;	
 					}
 					else
 					{
@@ -189,15 +196,19 @@ public class Assembler
 						}
 						else
 						{
-							int s = search((String)token[i]);
-							System.out.print("S " + Sptr + " ");
-							fw.write("S " + Sptr + " ");
-							
-							if(s == -1)
+							int s = search(token[i]);
+							if(s != -1)
+							{
+								System.out.print("S " + s + " ");
+								fw.write("S " + s + " ");
+							}
+							else if(s == -1)
 							{
 								ST[Sptr] = new Symbol();
 								ST[Sptr].sname = token[i];
-								Sptr++;
+								System.out.print("S " + Sptr + " ");
+								fw.write("S " + Sptr + " ");
+								Sptr++;								
 							}
 						}
 					}
